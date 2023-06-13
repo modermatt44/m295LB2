@@ -1,0 +1,47 @@
+commit ee6af18335af9a41a14460252694b605ccfbe9d0
+Author: marco <marco.odermatt@swisscom.com>
+Date:   Tue Jun 13 14:30:17 2023 +0000
+
+    added eslint
+
+commit d459d4a1f26f5a05b42a118e2063d399008b958f
+Author: marco <marco.odermatt@swisscom.com>
+Date:   Tue Jun 13 14:16:51 2023 +0000
+
+    changed folder structure
+
+commit 711ee1603b22fde1f808187c63fb7864cd7ab3be
+Author: marco <marco.odermatt@swisscom.com>
+Date:   Tue Jun 13 14:09:41 2023 +0000
+
+    changed all error messages to json responses
+
+commit ee19fd478fb76c6710b308e615e99d9b8a38e168
+Author: marco <marco.odermatt@swisscom.com>
+Date:   Tue Jun 13 14:02:29 2023 +0000
+
+    added controller folder
+
+commit 5a8109193c9ec1818a9cf1278d39fd225599e5f9
+Author: marco <marco.odermatt@swisscom.com>
+Date:   Tue Jun 13 13:33:04 2023 +0000
+
+    added authorization endpoints
+
+commit 4bbd7c00a089bb2a998788a8a25bbbfd093675e3
+Author: marco <marco.odermatt@swisscom.com>
+Date:   Tue Jun 13 13:31:35 2023 +0000
+
+    added task endpoints
+
+commit 3dc7aa87f610a46b3ddf43e35c5bb37c08670284
+Author: marco <marco.odermatt@swisscom.com>
+Date:   Tue Jun 13 11:22:35 2023 +0000
+
+    initalized node and added gitignore
+
+commit e0aad73cc6f11aa12074529179cb230fbf91bedf
+Author: marco <marco.odermatt@swisscom.com>
+Date:   Tue Jun 13 11:17:33 2023 +0000
+
+    initial commit
