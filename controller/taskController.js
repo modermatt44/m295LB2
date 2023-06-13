@@ -43,9 +43,9 @@ exports.postTask = (req, res) => {
     const completed = false;
     const task = tasks.find(task => task.id === id);
     if (task) {
-        return res.status(409).send('Task already exists');
+        return res.status(409).json({ error: 'Task already exists' });
     } else if (!name || !description) {
-        return res.status(422).send('Missing name or description');
+        return res.status(422).json({ error: 'Missing name or description' });
     } else {
         tasks.push({ id, name, description, completed });
         res.status(201).json({ id, name, description, completed });
@@ -60,7 +60,7 @@ exports.getTask = (req, res) => {
     if (task) {
         res.json(task);
     } else {
-        res.status(404).send('Task not found');
+        res.status(404).json({ error: 'Task not found' });
     }
 };
 
@@ -70,9 +70,9 @@ exports.putTask = (req, res) => {
     const id = parseInt(req.params.id);
     const task = tasks.find(task => task.id === id);
     if (!task) {
-        return res.status(404).send('Task not found');
+        return res.status(404).json({ error: 'Task not found' });
     } else if (!req.body.name || !req.body.description || !req.body.completed) {
-        return res.status(422).send('Missing name, description or completed');
+        return res.status(422).json({ error: 'Missing name, description or completed' });
     } else {
         task.name = req.body.name;
         task.description = req.body.description;
@@ -87,7 +87,7 @@ exports.deleteTask = (req, res) => {
     const id = parseInt(req.params.id);
     const task = tasks.find(task => task.id === id);
     if (!task) {
-        return res.status(404).send('Task not found');
+        return res.status(404).json({ error: 'Task not found' });
     } else {
         tasks.splice(tasks.indexOf(task), 1);
         res.status(200).send(task);

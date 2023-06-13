@@ -5,14 +5,14 @@ exports.login = (req, res) => {
     const validatedEmail = email.toLowerCase().match(/^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|.(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/)
     const password = req.body.password;
     if (!email || !password) {
-        return res.status(422).send('Missing email or password');
+        return res.status(422).json({ error: 'Missing email or password' });
     } else if (!validatedEmail) {
-        return res.status(422).send('Invalid email');
+        return res.status(422).json({ error: 'Invalid email' });
     } else if (password !== 'm295') {
-        return res.status(401).send('Invalid password');
+        return res.status(401).json({ error: 'Invalid password' });
     } else {
         req.session.user = { email: email, password: password };
-        res.status(200).send(req.session.user);
+        res.status(200).json(req.session.user);
     }
 };
 
@@ -21,7 +21,7 @@ exports.verify = (req, res) => {
     if (req.session.user) {
         res.status(200).json(req.session.user);
     } else {
-        res.status(401).send('User is not logged in');
+        res.status(401).json({ error: 'User is not logged in' });
     }
 };
 
